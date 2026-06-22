@@ -64,37 +64,35 @@ a:hover {
 }
 
 .header-inner {
-  max-width: var(--max-width);
+  max-width: 1024px;
   margin: 0 auto;
   padding: 0.75rem 1.25rem;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  gap: 0.75rem 1rem;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
 }
 
 .site-logo {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+  grid-column: 1 / -1;
+  display: block;
+  width: 100%;
+  max-width: 1024px;
   text-decoration: none;
-  color: var(--color-text);
 }
 
 .site-logo img {
-  height: 48px;
-  width: auto;
-}
-
-.site-logo span {
-  font-family: var(--font-sans);
-  font-size: 1.5rem;
-  font-weight: 400;
-  letter-spacing: 0.02em;
+  width: 100%;
+  max-width: 1024px;
+  height: auto;
 }
 
 /* Mobile nav toggle */
 .nav-toggle {
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: end;
   display: none;
   background: none;
   border: 1px solid var(--color-border);
@@ -104,6 +102,12 @@ a:hover {
   font-size: 1.25rem;
   line-height: 1;
   color: var(--color-text);
+}
+
+.site-nav {
+  margin: 0 1rem 1rem 1rem;
+  grid-column: 1 / -1;
+  grid-row: 2;
 }
 
 /* Navigation */
@@ -222,7 +226,8 @@ a:hover {
 
 .content .resource-link {
   padding-left: 1.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 2.5rem;
+  display: block;
 }
 
 /* Hero section (home) */

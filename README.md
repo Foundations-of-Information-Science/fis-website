@@ -71,22 +71,6 @@ To add a document:
 1. Place the file in `assets/docs/`.
 2. Link to it from the appropriate page using a relative path (e.g. `../assets/docs/my-paper.pdf` from a subpage).
 
-## Regenerating from WordPress (optional)
-
-If you need to refresh content from the live WordPress instance:
-
-```bash
-# Fetch page content
-curl -sS "https://fis.sciforum.net/wp-json/wp/v2/pages?per_page=100&_fields=id,slug,title,content" \
-  -o /tmp/fis_pages.json
-
-# Download assets
-python3 scripts/download_assets.py
-
-# Rebuild HTML pages
-python3 scripts/build_site.py
-```
-
 Note: some legacy external documents may no longer be available at their original URLs; those links are preserved as external references.
 
 ## Netlify deployment
