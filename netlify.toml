@@ -1,0 +1,26 @@
+[build]
+  publish = "."
+  command = ""
+
+[[redirects]]
+  from = "/2014/10/06/welcome-to-the-experimental-fis-pages-hosted-with-wordpress/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/feed/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/comments/feed/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
