@@ -1,6 +1,8 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8b93220a-4ec3-4914-917e-d0d51bacee39/deploy-status)](https://app.netlify.com/projects/fis-website/deploys)
+
 # FIS — Foundations of Information Science
 
-Static website for [FIS (Foundations of Information Science)](https://fis.sciforum.net/), migrated from WordPress to plain HTML and CSS for deployment on [Netlify](https://www.netlify.com/).
+Static website for [FIS (Foundations of Information Science)](https://fis.sciforum.net/), migrated from WordPress to plain HTML and CSS for deployment on [Netlify](https://fis-website.netlify.app/).
 
 ## About
 
@@ -15,8 +17,6 @@ The site includes:
 - **Mail Archives** — links to mailing list archives (1997–present)
 - **Resources** — papers and presentations from FIS contributors
 - **Contact** — moderator and secretariat details
-
-Search, comments, and the legacy WordPress blog/feed have been intentionally removed.
 
 ## Project structure
 
@@ -44,20 +44,6 @@ Search, comments, and the legacy WordPress blog/feed have been intentionally rem
 └── README.md
 ```
 
-## Local preview
-
-No build step is required to serve the site. From the project root:
-
-```bash
-# Python 3
-python3 -m http.server 8080
-
-# or Node.js (if npx is available)
-npx serve .
-```
-
-Then open [http://localhost:8080](http://localhost:8080).
-
 ## Editing content
 
 Pages are plain HTML files. To edit:
@@ -73,24 +59,19 @@ To add a document:
 
 Note: some legacy external documents may no longer be available at their original URLs; those links are preserved as external references.
 
-## Netlify deployment
+## Local preview
 
-1. Push this repository to GitHub (or GitLab/Bitbucket).
-2. In Netlify: **Add new site → Import an existing project**.
-3. Build settings:
-   - **Build command:** *(leave empty)*
-   - **Publish directory:** `.` (repository root)
-4. Deploy.
+No build step is required to serve the site. From the project root:
 
-`netlify.toml` is already configured with:
+```bash
+# Python 3
+python3 -m http.server 8080
 
-- Publish directory set to repository root
-- 301 redirects for the dropped blog post and RSS feeds
-- Custom 404 page
+# or Node.js (if npx is available)
+npx serve .
+```
 
-### Custom domain
-
-After deployment, set the custom domain to `fis.sciforum.net` in Netlify **Domain settings** and update DNS records as instructed by Netlify.
+Then open [http://localhost:8080](http://localhost:8080).
 
 ## SEO
 
